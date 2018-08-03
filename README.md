@@ -21,14 +21,16 @@ igraph package.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-rgexf-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-rgexf-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-rgexf-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-rgexf-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-rgexf-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-rgexf-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-rgexf-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-rgexf-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-rgexf/badges/version.svg)](https://anaconda.org/conda-forge/r-rgexf)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-rgexf/badges/downloads.svg)](https://anaconda.org/conda-forge/r-rgexf)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--rgexf-green.svg)](https://anaconda.org/conda-forge/r-rgexf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-rgexf.svg)](https://anaconda.org/conda-forge/r-rgexf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-rgexf.svg)](https://anaconda.org/conda-forge/r-rgexf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-rgexf.svg)](https://anaconda.org/conda-forge/r-rgexf) |
 
 Installing r-rgexf
 ==================
