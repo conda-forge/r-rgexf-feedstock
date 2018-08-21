@@ -10,38 +10,44 @@ package:
 source:
   fn: rgexf_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/rgexf_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/rgexf/rgexf_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/rgexf_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rgexf/rgexf_{{ version }}.tar.gz
   sha256: 2e8a7978d1fb977318e6310ba65b70a9c8890185c819a7951ac23425c6dc8147
 
 build:
   merge_build_host: True  # [win]
-  number: 1
-  # r-igraph is not available under Windows
-  skip: true  # [win]
+  number: 2
+
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
+
   host:
     - r-base
     - r-rook
     - r-xml
     - r-igraph
+
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-rook
     - r-xml
     - r-igraph
 
 test:
   commands:
-    - $R -e "library('rgexf')"  # [not win]
+    - $R -e "library('rgexf')"           # [not win]
     - "\"%R%\" -e \"library('rgexf')\""  # [win]
 
 about:
@@ -56,8 +62,14 @@ about:
     on a web browser through "sigmajs" (a javascript library) and interact with the
     igraph package.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'      # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast

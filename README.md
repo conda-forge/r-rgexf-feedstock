@@ -7,14 +7,7 @@ Package license: GPL (>= 3)
 
 Feedstock license: BSD 3-Clause
 
-Summary: Create, read and write GEXF (Graph Exchange XML Format) graph files (used in Gephi
-and others). Using the XML package, it allows the user to easily build/read graph
-files including attributes, GEXF viz attributes (such as color, size, and position),
-network dynamics (for both edges and nodes) and edge weighting. Users can build/handle
-graphs element-by-element or massively through data-frames, visualize the graph
-on a web browser through "sigmajs" (a javascript library) and interact with the
-igraph package.
-
+Summary: Create, read and write GEXF (Graph Exchange XML Format) graph files (used in Gephi and others). Using the XML package, it allows the user to easily build/read graph files including attributes, GEXF viz attributes (such as color, size, and position), network dynamics (for both edges and nodes) and edge weighting. Users can build/handle graphs element-by-element or massively through data-frames, visualize the graph on a web browser through "sigmajs" (a javascript library) and interact with the igraph package.
 
 
 
@@ -23,7 +16,7 @@ Current build status
 
 [![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-rgexf-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-rgexf-feedstock)
 [![OSX](https://img.shields.io/travis/conda-forge/r-rgexf-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-rgexf-feedstock)
-![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-rgexf-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-rgexf-feedstock/branch/master)
 
 Current release info
 ====================
