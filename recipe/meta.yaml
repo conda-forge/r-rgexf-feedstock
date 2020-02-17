@@ -1,5 +1,4 @@
-{% set version = '0.15.3' %}
-
+{% set version = "0.16.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -12,36 +11,27 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgexf_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgexf/rgexf_{{ version }}.tar.gz
-  sha256: 2e8a7978d1fb977318e6310ba65b70a9c8890185c819a7951ac23425c6dc8147
+  sha256: 2a671df9ac70cfefd4092754317cb28e32a33df345b80e1975bf838e838245ee
 
 build:
   merge_build_host: True  # [win]
-  number: 1003
-
+  noarch: generic
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
-
+    - {{posix}}zip    # [win]
   host:
     - r-base
-    - r-rook
+    - r-servr
     - r-xml
     - r-igraph
-
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
-    - r-rook
+    - r-servr
     - r-xml
     - r-igraph
 
@@ -51,25 +41,20 @@ test:
     - "\"%R%\" -e \"library('rgexf')\""  # [win]
 
 about:
-  home: http://bitbucket.org/gvegayon/rgexf, http://www.ggvega.com
-  license: GPL (>= 3)
-  summary: |
-    Create, read and write GEXF (Graph Exchange XML Format) graph files (used in Gephi
-    and others). Using the XML package, it allows the user to easily build/read graph
-    files including attributes, GEXF viz attributes (such as color, size, and position),
+  home: https://gvegayon.github.io/rgexf
+  license: MIT
+  summary: Create, read and write 'GEXF' (Graph Exchange 'XML' Format) graph files (used in 'Gephi'
+    and others). Using the 'XML' package, it allows the user to easily build/read graph
+    files including attributes, 'GEXF' visual attributes (such as color, size, and position),
     network dynamics (for both edges and nodes) and edge weighting. Users can build/handle
     graphs element-by-element or massively through data-frames, visualize the graph
-    on a web browser through "sigmajs" (a javascript library) and interact with the
-    igraph package.
-  license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    on a web browser through 'gexf-js' (a 'javascript' library) and interact with the
+    'igraph' package.
+  license_family: MIT
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - LICENSE
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
