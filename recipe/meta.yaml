@@ -1,5 +1,4 @@
 {% set version = "0.16.0" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -17,7 +16,6 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 0
-
   rpaths:
     - lib/R/lib/
     - lib/
@@ -31,13 +29,11 @@ requirements:
     - {{posix}}sed               # [win]
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
-
   host:
     - r-base
     - r-rook
     - r-xml
     - r-igraph
-
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -67,9 +63,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
