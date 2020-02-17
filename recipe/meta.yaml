@@ -1,4 +1,4 @@
-{% set version = '0.15.3' %}
+{% set version = "0.16.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgexf_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgexf/rgexf_{{ version }}.tar.gz
-  sha256: 2e8a7978d1fb977318e6310ba65b70a9c8890185c819a7951ac23425c6dc8147
+  sha256: 2a671df9ac70cfefd4092754317cb28e32a33df345b80e1975bf838e838245ee
 
 build:
   merge_build_host: True  # [win]
-  number: 1003
+  number: 0
 
   rpaths:
     - lib/R/lib/
