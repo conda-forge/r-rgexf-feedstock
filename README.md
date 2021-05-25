@@ -5,11 +5,9 @@ Home: https://gvegayon.github.io/rgexf
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rgexf-feedstock/blob/master/LICENSE.txt)
 
 Summary: Create, read and write 'GEXF' (Graph Exchange 'XML' Format) graph files (used in 'Gephi' and others). Using the 'XML' package, it allows the user to easily build/read graph files including attributes, 'GEXF' visual attributes (such as color, size, and position), network dynamics (for both edges and nodes) and edge weighting. Users can build/handle graphs element-by-element or massively through data-frames, visualize the graph on a web browser through 'gexf-js' (a 'javascript' library) and interact with the 'igraph' package.
-
-
 
 Current build status
 ====================
@@ -38,6 +36,7 @@ Installing `r-rgexf` from the `conda-forge` channel can be achieved by adding `c
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `r-rgexf` can be installed with:
@@ -108,9 +107,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
