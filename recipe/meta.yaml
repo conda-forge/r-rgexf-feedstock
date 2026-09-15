@@ -26,11 +26,13 @@ requirements:
     - r-base
     - r-servr
     - r-xml
+    - r-htmlwidgets
     - r-igraph
   run:
     - r-base
     - r-servr
     - r-xml
+    - r-htmlwidgets
     - r-igraph
 
 test:
